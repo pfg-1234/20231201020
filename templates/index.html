@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World App - 彭方冠</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header {
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #333;
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .message {
+            font-size: 1.8em;
+            color: #333;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .student-info {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info-item {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .time {
+            color: #666;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        
+        .links {
+            margin-top: 30px;
+        }
+        
+        .link {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .message {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hello World App</h1>
+            <p>Flask Web 应用程序</p>
+        </div>
+        
+        <div class="message">
+            {{ message }}
+        </div>
+        
+        <div class="student-info">
+            <div class="info-item">学号: {{ student_info.student_id }}</div>
+            <div class="info-item">姓名: {{ student_info.name }}</div>
+        </div>
+        
+        <div class="time">
+            当前时间: {{ current_time }}
+        </div>
+        
+        <div class="links">
+            <a href="/api/hello" class="link">API 接口</a>
+            <a href="/hello/访客" class="link">个性化问候</a>
+        </div>
+    </div>
+</body>
+</html>
